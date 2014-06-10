@@ -8,7 +8,7 @@ Gem::Specification.new do |s|
   s.name        = "obscura_linka"
   s.version     = ObscuraLinka::VERSION
   s.authors     = ["Austin Fonacier", "Kyle Boss", "Kunal Patel"]
-  s.email       = ["austinrf@gmail.com"]
+  s.email       = ["austinrf@gmail.com", "kyle@kyleboss.com", "kpatel2014@gmail.com"]
   s.homepage    = "http://github.com/austinrfnd/obscura_linka"
   s.summary     = "Obscure links"
   s.description = "Obscure links by creating and using link_to to move the rot13 the href to a data-attr.  And in an including JS take that data attribute un-rot 13 it and tell the browser to go to that link"

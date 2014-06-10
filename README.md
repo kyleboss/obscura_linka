@@ -2,6 +2,8 @@ This is a Rails Engine.  That adds a couple of things.
 
 ## Installation
 
+This has only been tested on Rails 4.1.1
+
 Add this line to your application's Gemfile:
 
     gem 'obscura_linka'
