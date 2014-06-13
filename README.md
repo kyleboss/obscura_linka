@@ -13,6 +13,7 @@ Add this line to your application's Gemfile:
 ```ruby
   # In the views
   # this link href will be obscured
+  # It will look like: <a href='' data-href="xxux://xuxuxm.nv8vjv" class='rot_13'>my link</a>
   <%= obscura_link_to('my link', root_path) %>
 ```
 

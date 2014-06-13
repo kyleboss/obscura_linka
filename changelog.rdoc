@@ -1,3 +1,7 @@
+=== 0.3.0
+
+- Major bug JS fixes
+
 === 0.2.0
 
 - Major bug fixes

@@ -15,14 +15,14 @@
 
 window.onload=function() {
 
-  // Get all elements that need to be obfuscated
-  rot_elements = document.getElementsByClassName('rot13_link')
+  var rot_elements = document.getElementsByClassName("rot13_link");
 
-  // Add onclick listeners to each link with deciphered code
-  for(var x = 0; x < rot_elements.length; x++) {
-      rot_elements[x].addEventListener("click",function(){
-        window.location = rot13(this.getAttribute("data-href"));
-      },false);
+  for (var i = 0; i < rot_elements.length ; i++) {
+    rot_elements[i].addEventListener("click",
+    function (event) {
+      event.preventDefault();
+      window.location = rot13(this.getAttribute("data-href"));
+    }, false);
   }
 
   function rot( t, u, v ) {
