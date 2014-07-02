@@ -1,3 +1,7 @@
+=== 0.4.0
+
+- Namespace the javascript under ObscuraLinka
+
 === 0.3.0
 
 - Major bug JS fixes
