@@ -14,15 +14,28 @@
 
 ObscuraLinka = {
   initialize: function() {
-    var rot_elements = document.getElementsByClassName("rot13_link");
+    var rot_elements = document.querySelectorAll(".rot13_link");
 
     for (var i = 0; i < rot_elements.length ; i++) {
-      rot_elements[i].addEventListener("click",
-      function (event) {
-        event.preventDefault();
-        window.location = ObscuraLinka.rot13(this.getAttribute("data-href"));
-      }, false);
+      if (rot_elements[i].addEventListener) {
+        var obscured_link = rot_elements[i].getAttribute("data-href")
+        rot_elements[i].addEventListener("click", function (e) { 
+          ObscuraLinka.go_to_url(e, obscured_link) }, false);
+      } else {
+        var obscured_link = rot_elements[i].attributes["data-href"].nodeValue
+        rot_elements[i].attachEvent("onclick", function (e) { 
+          ObscuraLinka.go_to_url(e, obscured_link) });
+      }
     }
+  },
+
+  go_to_url: function(event, obscured_link) {
+    if (event.preventDefault) {
+      event.preventDefault();
+    } else {
+      event.returnValue = false;
+    }
+    window.location = ObscuraLinka.rot13(obscured_link);
   },
 
   rot: function( t, u, v ) {
@@ -49,4 +62,4 @@ ObscuraLinka = {
   }
 };
 
-$(window).load = ObscuraLinka.initialize();
+window.onload = function() { ObscuraLinka.initialize() };
