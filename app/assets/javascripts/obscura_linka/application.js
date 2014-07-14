@@ -17,12 +17,13 @@ ObscuraLinka = {
     var rot_elements = document.querySelectorAll(".rot13_link");
 
     for (var i = 0; i < rot_elements.length ; i++) {
+      // Is an old browser? Such as IE8
       if (rot_elements[i].addEventListener) {
-        var obscured_link = rot_elements[i].getAttribute("data-href")
+        var obscured_link = rot_elements[i].getAttribute("data-href");
         rot_elements[i].addEventListener("click", function (e) { 
           ObscuraLinka.go_to_url(e, obscured_link) }, false);
       } else {
-        var obscured_link = rot_elements[i].attributes["data-href"].nodeValue
+        var obscured_link = rot_elements[i].attributes["data-href"].nodeValue;
         rot_elements[i].attachEvent("onclick", function (e) { 
           ObscuraLinka.go_to_url(e, obscured_link) });
       }
@@ -30,6 +31,7 @@ ObscuraLinka = {
   },
 
   go_to_url: function(event, obscured_link) {
+    // Is an old browser? Such as IE8
     if (event.preventDefault) {
       event.preventDefault();
     } else {
