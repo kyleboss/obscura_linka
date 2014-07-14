@@ -1,3 +1,6 @@
+=== next release
+- IE 8 Fixes & removed jQuery dependency
+
 === 0.4.0
 
 - Namespace the javascript under ObscuraLinka
